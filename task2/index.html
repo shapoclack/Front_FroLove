@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Практическое задание 2 — CRUD товаров</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="page">
+    <h1 class="page__title">Управление товарами (CRUD)</h1>
+
+    <div class="card">
+      <div class="crud">
+        <form id="product-form" class="crud__form" autocomplete="off">
+          <div class="crud__field">
+            <label class="crud__label">ID (для поиска / редактирования)</label>
+            <input type="number" id="product-id" class="crud__input">
+          </div>
+
+          <div class="crud__field">
+            <label class="crud__label">Название</label>
+            <input type="text" id="product-name" class="crud__input" required>
+          </div>
+
+          <div class="crud__field">
+            <label class="crud__label">Стоимость</label>
+            <input type="number" id="product-price" class="crud__input" required>
+          </div>
+
+          <div class="crud__buttons">
+            <button type="button" id="create-btn" class="btn">Добавить</button>
+            <button type="button" id="update-btn" class="btn">Обновить</button>
+            <button type="button" id="delete-btn" class="btn">Удалить</button>
+            <button type="button" id="get-by-id-btn" class="btn">Найти по id</button>
+            <button type="button" id="reset-btn" class="btn">Сброс</button>
+          </div>
+        </form>
+
+        <div class="crud__list-wrap">
+          <h2 class="crud__list-title">Список товаров</h2>
+          <ul id="products-list" class="crud__list"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+</body>
+</html>

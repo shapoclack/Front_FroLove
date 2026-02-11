@@ -1,0 +1,146 @@
+// Переменные
+$bg-page: #2f3a4d;
+$bg-card: #1f2532;
+$bg-panel: rgba(15, 20, 32, 0.85);
+$accent: #3fa6ff;
+
+// Миксин для тени карточки
+@mixin card-shadow {
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+// Сброс
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+// Страница
+body {
+  min-height: 100vh;
+  background: $bg-page;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #fff;
+}
+
+.page {
+  padding: 32px 40px 48px;
+
+  &__title {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+}
+
+// Карточка‑контейнер
+.card {
+  background: $bg-card;
+  border-radius: 20px;
+  @include card-shadow;
+  padding: 24px;
+}
+
+// Кнопки
+.btn {
+  padding: 9px 16px;
+  border-radius: 999px;
+  border: none;
+  background: $accent;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.1s ease;
+
+  &:hover {
+    background: lighten($accent, 5%);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+// CRUD‑разметка
+.crud {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__label {
+    font-size: 14px;
+    color: #c9d3e5;
+  }
+
+  &__input {
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #1e2634;
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+  }
+
+  &__input:focus {
+    border-color: $accent;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  &__list-wrap {
+    background: $bg-panel;
+    border-radius: 16px;
+    padding: 16px 18px;
+  }
+
+  &__list-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+  }
+
+  &__list li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  }
+
+  &__list li:last-child {
+    border-bottom: none;
+  }
+}
