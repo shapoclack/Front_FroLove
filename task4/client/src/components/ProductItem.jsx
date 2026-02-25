@@ -1,6 +1,22 @@
 export function ProductItem({ product, onEdit, onDelete }) {
   return (
     <div className="userRow">
+      <div className="productThumb">
+        {product.image ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="productThumb__img"
+            onError={(e) => { e.currentTarget.style.display = "none"; e.currentTarget.nextSibling.style.display = "flex"; }}
+          />
+        ) : null}
+        <div
+          className="productThumb__placeholder"
+          style={{ display: product.image ? "none" : "flex" }}
+        >
+          📷
+        </div>
+      </div>
       <div className="userMain">
         <div className="userId">{product.id}</div>
         <div className="userName">{product.name}</div>

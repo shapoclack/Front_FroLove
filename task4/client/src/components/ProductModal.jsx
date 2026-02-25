@@ -160,6 +160,20 @@ export function ProductModal({ open, mode, product, onClose, onSubmit }) {
             />
           </label>
 
+          {image.trim() && (
+            <div className="imagePreview">
+              <img
+                src={image.trim()}
+                alt="Превью"
+                className="imagePreview__img"
+                onError={(e) => { e.currentTarget.style.display = "none"; e.currentTarget.nextSibling.style.display = "block"; }}
+              />
+              <div className="imagePreview__error" style={{ display: "none" }}>
+                ⚠️ Не удалось загрузить изображение
+              </div>
+            </div>
+          )}
+
           <div className="modal__footer">
             <button type="button" className="btn" onClick={onClose}>
               Отмена
