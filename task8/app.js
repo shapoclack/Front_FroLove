@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const { nanoid } = require("nanoid");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -8,6 +9,8 @@ const swaggerUi = require('swagger-ui-express');
 
 const app = express();
 const port = 3001;
+
+app.use(express.static(path.join(__dirname, 'public')));
 const JWT_SECRET = "very_secret_key_123";
 const JWT_EXPIRES_IN = '1h';
 
