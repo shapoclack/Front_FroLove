@@ -1,9 +1,6 @@
 node_modules/
-<<<<<<< HEAD
-.env
-.DS_Store
-=======
 dist/
 .env
+.DS_Store
 .vite/
->>>>>>> fdd49995b591952a3ad32a34117841b516a5b63d
+*.log
