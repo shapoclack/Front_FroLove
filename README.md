@@ -245,5 +245,8 @@ npm run dev
 ## Автор
 
 **FroLove Kirill**
+
+
+
 [![Топ языков](https://github-readme-stats.vercel.app/api/top-langs/?username=shapoclack&layout=compact&theme=dracula)](https://github.com/shapoclack)
 [![Карточка репозитория Front_FroLove](https://github-readme-stats.vercel.app/api/pin/?username=shapoclack&repo=Front_FroLove&theme=tokyonight)](https://github.com/shapoclack/Front_FroLove)
