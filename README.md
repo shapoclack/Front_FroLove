@@ -250,3 +250,4 @@ npm run dev
 
 [![Топ языков](https://github-readme-stats.vercel.app/api/top-langs/?username=shapoclack&layout=compact&theme=dracula)](https://github.com/shapoclack)
 [![Карточка репозитория Front_FroLove](https://github-readme-stats.vercel.app/api/pin/?username=shapoclack&repo=Front_FroLove&theme=tokyonight)](https://github.com/shapoclack/Front_FroLove)
+[![Сводная статистика профиля](https://github-readme-stats.vercel.app/api?username=shapoclack&show_icons=true&theme=radical)](https://github.com/shapoclack)
