@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заметки App Shell (Task 15)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0b0a1a">
+  <link rel="apple-touch-icon" href="./icons/icon-192x192.png">
+</head>
+
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Заметки</h1>
+      <p>Оффлайн-приложение</p>
+      
+      <nav class="app-nav">
+        <a href="./index.html">Задачи</a>
+        <a href="./about.html" class="active">О нас</a>
+      </nav>
+    </header>
+    
+    <div class="about-content">
+      <h2>О приложении</h2>
+      <p>Это приложение Заметки, разработанное в рамках Практического занятия №15 с использованием архитектуры <b>App Shell</b>.</p>
+      <br>
+      <p>Оно поддерживает работу в оффлайн-режиме, предварительно кэширует статические ресурсы (HTML-каркас, CSS, JS) при первой установке, а динамический контент (сами страницы) обновляет онлайн по стратегии <b>Network First</b>!</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

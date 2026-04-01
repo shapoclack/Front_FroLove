@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заметки (Dark Premium)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Заметки</h1>
+      <p>Оффлайн-приложение</p>
+    </header>
+    
+    <form id="note-form" class="note-form">
+      <input type="text" id="note-input" class="note-input" placeholder="Что нужно сделать?" required>
+      <button type="submit" class="note-submit">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm5 11h-4v4a1 1 0 01-2 0v-4H7a1 1 0 010-2h4V7a1 1 0 012 0v4h4a1 1 0 010 2z"></path>
+        </svg>
+      </button>
+    </form>
+    
+    <ul id="notes-list" class="notes-list"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

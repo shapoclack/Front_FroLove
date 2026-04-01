@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заметки App Shell (Task 15)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="manifest" href="./manifest.json">
+  <meta name="theme-color" content="#0b0a1a">
+  <link rel="apple-touch-icon" href="./icons/icon-192x192.png">
+</head>
+
+<body>
+  <div class="app-container">
+    <header>
+      <h1>Заметки</h1>
+      <p>Оффлайн-приложение</p>
+      <nav class="app-nav">
+        <a href="./index.html" class="active">Задачи</a>
+        <a href="./about.html">О нас</a>
+      </nav>
+    </header>
+    
+    <form id="note-form" class="note-form">
+      <input type="text" id="note-input" class="note-input" placeholder="Что нужно сделать?" required>
+      <button type="submit" class="note-submit">
+        <svg fill="currentColor" viewBox="0 0 24 24" width="20" height="20">
+          <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm5 11h-4v4a1 1 0 01-2 0v-4H7a1 1 0 010-2h4V7a1 1 0 012 0v4h4a1 1 0 010 2z"></path>
+        </svg>
+      </button>
+    </form>
+    
+    <!-- Push API Buttons -->
+    <div class="push-controls" style="text-align: center; margin-bottom: 24px;">
+        <button type="button" id="btn-subscribe" class="note-submit" style="width: auto; padding: 0 16px; font-size: 14px; margin: 0 auto 8px;">Включить уведомления</button>
+        <button type="button" id="btn-unsubscribe" class="note-submit" style="width: auto; padding: 0 16px; font-size: 14px; margin: 0 auto; background: var(--accent); display: none;">Отключить уведомления</button>
+    </div>
+    
+    <ul id="notes-list" class="notes-list"></ul>
+    
+    <div id="toast-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px;"></div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
