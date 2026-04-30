@@ -26,6 +26,10 @@ Front_FroLove/
 ├── task15/         # Задание 15 — App Shell и стратегия Network First
 ├── task16/         # Задание 16 — Socket.io и Web Push API
 ├── task17/         # Задание 17 — Контрольная работа (Напоминания + PWA)
+├── task19/         # Задание 19 — PostgreSQL и Sequelize
+├── task20/         # Задание 20 — MongoDB и Mongoose
+├── task21/         # Задание 21 — Кэширование с Redis
+├── task22/         # Задание 22 — Docker: Nginx + HAProxy + Redis
 └── README.md
 ```
 
@@ -328,6 +332,95 @@ cd task17
 npm install
 node server.js
 # → http://localhost:8016
+```
+
+---
+
+## Практическое задание 19 — PostgreSQL и Sequelize
+
+Работа с реляционными СУБД на примере PostgreSQL. Реализовано подключение к базе данных через Sequelize ORM и низкоуровневый драйвер `pg`.
+
+- Определение моделей (User, Product) и связей между ними
+- CRUD-операции с использованием Sequelize
+- Валидация данных на уровне моделей
+- Конфигурация через `.env`
+
+**Технологии:** Node.js, Express, PostgreSQL, Sequelize, pg, dotenv
+
+### Запуск
+
+```bash
+cd task19
+npm install
+node server.js
+```
+
+---
+
+## Практическое задание 20 — MongoDB и Mongoose
+
+Работа с NoSQL СУБД на примере MongoDB. Использование Mongoose ODM для проектирования схем и взаимодействия с документами.
+
+- Документоориентированная модель данных
+- Схемы и модели Mongoose (User, Product)
+- Асинхронные операции сохранения и поиска данных
+- Интеграция с Express API
+
+**Технологии:** Node.js, Express, MongoDB, Mongoose, dotenv
+
+### Запуск
+
+```bash
+cd task20
+npm install
+node server.js
+```
+
+---
+
+## Практическое задание 21 — Кэширование с Redis
+
+Интеграция Redis в существующее приложение для оптимизации производительности через кэширование ответов API.
+
+- Middleware для перехвата запросов и проверки наличия данных в кэше
+- Инвалидация кэша при обновлении или удалении данных
+- TTL (Time To Live) для закэшированных ресурсов
+- Ролевая модель доступа сохранена и интегрирована с Redis
+
+**Технологии:** React 19, Vite, Node.js, Express, Redis, JWT, Axios
+
+### Запуск
+
+```bash
+# Терминал 1 — Бэкенд
+cd task21/server
+npm install
+node app.js
+
+# Терминал 2 — Фронтенд
+cd task21/client
+npm install
+npm run dev
+```
+
+---
+
+## Практическое задание 22 — Docker: Nginx + HAProxy + Redis
+
+Развёртывание масштабируемого приложения с использованием Docker Compose и механизмов балансировки нагрузки.
+
+- **Nginx** — настроен как Reverse Proxy и Load Balancer (upstream)
+- **HAProxy** — альтернативный балансировщик с алгоритмом Round Robin
+- **Redis** — используется как общее хранилище для нескольких инстансов бэкенда
+- **Docker Compose** — оркестрация всех сервисов (2 инстанса бэкенда, БД, прокси)
+
+**Технологии:** Docker, Docker Compose, Nginx, HAProxy, Redis, Node.js
+
+### Запуск
+
+```bash
+cd task22
+docker-compose up --build
 ```
 
 ---
