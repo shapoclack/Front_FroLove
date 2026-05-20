@@ -21,7 +21,7 @@ function Navbar() {
         <nav className="navbar">
             <Link to="/" className="nav-brand">
                 <div className="nav-brand-icon">🛒</div>
-                <span>Task 11</span>
+                <span>Task 21</span>
             </Link>
             <div className="nav-links">
                 {user ? (

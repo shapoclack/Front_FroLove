@@ -31,6 +31,9 @@ Front_FroLove/
 ├── task21/         # Задание 21 — Кэширование с Redis
 ├── task22/         # Задание 22 — Docker: Nginx + HAProxy + Redis
 ├── task23/         # Задание 23 — Контейнеризация с Docker (Nginx + Backend)
+├── task25/         # Задание 25 — Инструменты сборки: Webpack и Vite
+├── task26/         # Задание 26 — GraphQL и Apollo Server
+├── task27/         # Задание 27 — Брокеры сообщений: RabbitMQ
 └── README.md
 ```
 
@@ -443,6 +446,77 @@ docker-compose up --build
 ```bash
 cd task23
 docker-compose up --build
+```
+
+---
+
+## Практическое задание 25 — Инструменты сборки: Webpack и Vite
+
+Создание React-приложения с использованием Vite, демонстрация техник оптимизации бандла и современного веб-дизайна.
+
+- **Visuals & Design:** Добавлен анимированный WebGL-фон с эффектом **Grainient** (используется библиотека `ogl` для высокопроизводительных шейдеров). Реализован современный интерфейс в стиле Glassmorphism.
+- **Routing:** Реализовано два маршрута (Главная и О нас) с использованием `react-router-dom`.
+- **Lazy Loading:** Страница «О нас» загружается динамически через `React.lazy` и `Suspense`.
+- **Bundle Analysis:** Интегрирован плагин `rollup-plugin-visualizer` для анализа веса библиотек (например, веса `ogl` в итоговом бандле).
+- **Production Build:** Настроена сборка с генерацией отчёта `stats.html`.
+
+**Технологии:** React 19, Vite, OGL, Framer Motion (опционально), React Router, rollup-plugin-visualizer
+
+### Запуск
+
+```bash
+cd task25
+npm install
+npm run build
+# Отчёт анализатора будет доступен в task25/stats.html
+```
+
+---
+
+## Практическое задание 26 — GraphQL и Apollo Server
+
+Создание GraphQL API для управления каталогом книг с использованием Apollo Server. Демонстрация схемы данных, типов, мутаций и вложенных резолверов.
+
+- **Схема данных (Schema):** Описаны типы `Book` и `Author` со связью «один-ко-многим».
+- **Запросы (Query):** Реализовано получение всех книг, всех авторов и книги по ID.
+- **Мутации (Mutation):** Реализовано создание новых книг и авторов.
+- **Резолверы (Resolvers):** Настроено разрешение вложенных полей (`author` для книги и `books` для автора).
+
+**Технологии:** Node.js, GraphQL, Apollo Server
+
+### Запуск
+
+```bash
+cd task26
+npm install
+npm start
+# GraphQL Sandbox будет доступен по адресу http://localhost:4000
+```
+
+---
+
+## Практическое задание 27 — Брокеры сообщений: RabbitMQ
+
+Реализация системы асинхронной обработки задач с использованием RabbitMQ. Демонстрация паттерна Producer-Consumer, логики повторных попыток и очереди «мёртвых писем».
+
+- **Producer (Express API):** Эндпоинт `POST /tasks` для постановки задач в очередь.
+- **Consumer (Worker):** Воркеры для параллельной обработки задач.
+- **Retry Logic:** Экспоненциальная задержка при повторных попытках (exponential backoff).
+- **Dead Letter Queue (DLQ):** Очередь для сообщений, которые не удалось обработать после всех попыток.
+- **Docker:** Развёртывание RabbitMQ через Docker Compose.
+
+**Технологии:** Node.js, Express, RabbitMQ (amqplib), Docker
+
+### Запуск
+
+```bash
+cd task27
+# 1. Запустить RabbitMQ
+docker-compose up -d
+# 2. Запустить Producer
+npm run producer
+# 3. Запустить Worker(ы) в отдельных терминалах
+npm run worker
 ```
 
 ---
